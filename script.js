@@ -1,31 +1,37 @@
-
-
-var colors = [
-    randomColor(),
-    randomColor(),
-    randomColor(),
-    randomColor(),
-    randomColor(),
-    randomColor(),
-    randomColor(),
-    randomColor(),
-    randomColor()];
-
-var panel = document.getElementById("Head");
+var btnStart = document.getElementById("btnStart");
+var btnReload = document.getElementById("btnReload");
+var question = document.getElementById("question");
+var panel = document.getElementById("panel");
 var result = document.getElementById("result");
+var gameBroad = document.getElementById("game");
 var squares = document.querySelectorAll(".square");
-var btnStart = document.getElementById("start");
-var comboBox = document.getElementById("level");
-var levelHard = document.getElementById("hard");
+var hardLevel = document.getElementById("hard");
+var level = document.getElementById("comboBoxLevel");
+var chooseLevel = level.value;
 
-var level = comboBox.
 
-btnStart.addEventListener("click", function () {
-    if (comboBox.concat("hard")) {
+var easyColor = [
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor()
+]
 
-    }
-})
+var hardColor = [
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor(),
+    randomColor()
+]
 
+//random color for game broad
 function randomColor() {
 
     var red = Math.floor(Math.random() * 256);
@@ -34,16 +40,44 @@ function randomColor() {
     return "rgb" + "(" + red + ", " + green + ", " + blue + ")";
 }
 
-var question = document.getElementById("question");
-question.textContent = questionChoose;
-for (var i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = colors[i];
+//generate question level easy
+function easyQuestionGenerator() {
+    var random = Math.floor(Math.random() * 6);
+    return easyColor[random];
+}
+//generate question level hard
+function hardQuestionGenerator() {
+    var random = Math.floor(Math.random() * 9);
+    return hardColor[random];
 }
 
-var questionChoose = function random() {
-    var random = Math.floor(Math.random() * 9);
-    return colors[random];
+//Script for game play
+btnStart.addEventListener("click", function () {
+})
+//Easy game play
+var easyGamePlay = function () {
+    gameBroad.style.visibility = this.visible;
 }
-function newQuestion() {
+
+//Play a game
+function start() {
+    document.getElementById("panel").style.visibility = "hidden";
+    document.getElementById("comboBoxLevel").style.visibility = "hidden";
+    if (document.getElementById("comboBoxLevel").value == 1) {
+        document.getElementById("game").style.visibility = "visible";
+        document.getElementById("easy").style.visibility = "visible";
+        document.getElementById("question").style.visibility = "visible";
+    }
+    else {
+        document.getElementById("game").style.visibility = "visible";
+        document.getElementById("easy").style.visibility = "visible";
+        document.getElementById("hard").style.visibility = "visible";
+        document.getElementById("question").style.visibility = "visible";
+
+    }
+}
+
+//reload game when choose wrong answer
+function reset() {
     location.reload();
 }

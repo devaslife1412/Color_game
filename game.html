@@ -5,37 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <script src="./script.js " type="text/javascript"></script>
-    <title>Color game</title>
+    <script src="./script.js" type="text/javascript"></script>
+    <title>Color Game</title>
   </head>
   <body>
-    <h1>Let's Play</h1>
-    <div class="question" id="Head">
+    <div class="panel" id="panel">
+      <label for="level">Choose a level:</label>
+      <select name="level" id="comboBoxLevel">
+        <option value="1">Easy</option>
+        <option value="2">Hard</option>
+      </select>
+      <div><button onclick="start()" id="btnStart">Start</button></div>
+      <div><button onclick="reset()" id="btnReload">Reload</button></div>
+    </div>
+    <div class="gameBroad" id="game">
       <div id="question">RGB(0, 0, 0)</div>
-      <div class="taskbar">
-        <div id="start"><button onclick="newQuestion()">Make new question</button></div>
-        <div id="result">Ngu</div>
-        <div class="level">
-          <select name="levelSelect" id="level">
-            <option value="easy">Easy</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
+      <div id="result">Nice, right answer</div>
+      <div id="easy">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
       </div>
-    </div>
-    <div class="gameboard">
-        <div id="easy">
-        <div class = "square"></div>
-        <div class = "square"></div>
-        <div class = "square"></div>
-        <div class = "square"></div>
-        <div class = "square"></div>
-        <div class = "square"></div>
-    </div>
-    <div id="hard">
-        <div class = "square"></div>
-        <div class = "square"></div>
-        <div class = "square"></div>
+      <div id="hard">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
     </div>
   </body>
 </html>

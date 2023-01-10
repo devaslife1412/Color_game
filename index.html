@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COLOR GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="panel">
+    <h1>Color Game</h1>
+    <div id="question">RGB(60, 132, 203)</div>
+    <h1>Play like a log</h1>
+    <div id="taskbar">
+        <div><button onclick="reset()">New Colors</button></div>
+        <div id = "result">Try Again</div>
+        <div><button onclick="easyLevel()" id="easyLevel">Easy</button><button onclick="hardLevel()" id="hardLevel">Hard</button></div>
+
+</div>
+</div>
+<div class="gameboard">
+    <div id="easy">
+    <div class = "square"></div>
+    <div class = "square"></div>
+    <div class = "square"></div>
+    <div class = "square"></div>
+    <div class = "square"></div>
+    <div class = "square"></div>
+</div>
+<div id="hard">
+    <div class = "hardSquare"></div>
+    <div class = "hardSquare"></div>
+    <div class = "hardSquare"></div>
+</div>
+<script src ="app.js" type="text/javascript"></script>
+</body>
+</html>

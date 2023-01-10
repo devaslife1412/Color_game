@@ -23,6 +23,7 @@ var panel = document.getElementById("panel");
 var result = document.getElementById("result");
 var hard = document.getElementById("hard");
 var easy = document.getElementById("easy");
+var color = document.getElementById("color");
 var squares = document.querySelectorAll(".square")
 var hardSquares = document.querySelectorAll(".hardSquare")
 var btnHard = document.getElementById("hardLevel")
@@ -71,6 +72,7 @@ function reset() {
 function easyLevel() {
     document.getElementById("easy").style.visibility = "visible";
     question.textContent = questionColor;
+    color.style.backgroundColor = questionColor;
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = easyColors[i];
         squares[i].addEventListener("click", function () {
@@ -96,6 +98,7 @@ function hardLevel() {
     document.getElementById("easy").style.visibility = "visible";
     var questionColorForHardLevel = randomForHardLevel();
     question.textContent = questionColorForHardLevel;
+    color.style.backgroundColor = questionColorForHardLevel;
     //set color for hard squares
     for (var i = 0; i < hardSquares.length; i++) {
         hardSquares[i].style.backgroundColor = hardColors[i];

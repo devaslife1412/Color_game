@@ -38,4 +38,16 @@ visibility: hidden;
     margin: 5px;
     border-radius: 10px;
 }
+#question{
+  font-weight: bold;
+}
+.circle {
+  width: 60px;
+  height: 70px;
+  background-color: #000000;
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  margin: auto;
+}
 

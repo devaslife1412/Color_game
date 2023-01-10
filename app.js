@@ -35,6 +35,7 @@ var getColors = 3;
 getNameOfPlayer = prompt("Who are u?");
 result.innerHTML = "Let's go my sweetie " + getNameOfPlayer;
 
+//choose the level to play the game
 btnHard.addEventListener("click", function () {
     hardLevel()
 })
@@ -50,18 +51,19 @@ function randomColorToGridLayout() {
     return "rgb" + "(" + red + ", " + green + ", " + blue + ")";
 }
 
-//random question and push to grid
+//random question and push to grid (for easy)
 function random() {
     var random = Math.floor(Math.random() * 6);
     return easyColors[random];
 }
+//random question and push to grid (for hard)
 function randomForHardLevel() {
     var random = Math.floor(Math.random() * 9);
     return hardColors[random];
 }
 
 
-
+//new game
 function reset() {
     location.reload();
 }
